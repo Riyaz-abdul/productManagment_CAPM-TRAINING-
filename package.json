@@ -1,0 +1,62 @@
+{
+  "name": "product_mgnt",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cap-js/hana": "^3.1.1",
+    "@sap/cds": "^10",
+    "@sap/xssec": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-product_managment": "cds watch --open com.apple.productmanagment/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-ordermanagment": "cds watch --open com.apple.ordermanagment/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/product_managment",
+    "app/ordermanagment"
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "[development]":{
+        "auth":{
+          "kind":"mocked",
+          "users":{
+            "riyaz":{
+              "password":"riyaz123",
+              "roles":[
+                "owner"
+              ]
+
+              
+            },
+            "sahithi":{
+              "password":"riyaz123",
+              "roles":[
+                "employee"
+              ],
+              "attr":
+              {
+                "strorName":[
+                "Gachibowli"
+              ]
+            }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

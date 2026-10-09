@@ -1,0 +1,38 @@
+{
+  "$xsappname":"riyazapp",
+  "tenant-mode":"dedicated",
+  "scopes": [
+    {
+    "name":"$XSAPPNAME.owner",
+    "description":"owner role"
+    },
+    {
+      "name":"$XSAPPNAME.employee",
+      "description":"employee role"
+    }
+  ],
+  "attributes": [
+    {
+      "name":"strorName",
+      "description": "holds store name",
+      "valueType":"string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name":"ownertemplate",
+      "description":"template for owner",
+      "scope-reference":[
+        "$XSAPPNAME.owner"
+      ]
+    },
+
+    {
+      "name":"employeetemplate",
+      "description":"employee template",
+      "scope-reference":[
+        "$XSAPPNAME.employee"
+      ]
+    }
+  ]
+}
